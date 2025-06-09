@@ -230,3 +230,19 @@ section.py-5 {
     }
 }
 
+/* Mejora la disposición de los botones de contacto en móvil */
+@media only screen and (max-width: 859px) {
+    #contact .container {
+        display: block;
+    }
+    #contact .btn {
+        display: block;
+        width: 100%;
+        margin: 0 0 1rem 0;
+        box-sizing: border-box;
+    }
+    #contact .btn:last-child {
+        margin-bottom: 0;
+    }
+}
+
