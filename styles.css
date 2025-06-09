@@ -211,3 +211,12 @@ section.py-5 {
     padding-bottom: 2rem !important;
 }
 
+/* Solución para que los botones de contacto no se superpongan en móvil */
+@media only screen and (max-width: 859px) {
+    #contact .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
