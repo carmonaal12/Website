@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrián Carmona Córdoba | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .navbar,
+        footer {
+            background-color: #6a0dad;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link,
+        footer {
+            color: #dcdcdc;
+        }
+
+        .card-header {
+            background-color: #6a0dad;
+            color: #dcdcdc;
+        }
+
+        .card-body {
+            background-color: #333;
+            color: #dcdcdc;
+        }
+
+        .card-custom-width {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            opacity: 1;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(106, 13, 173, 0.7);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .carousel-indicators {
+            bottom: -20px;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #6a0dad;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        .carousel-indicators .active {
+            opacity: 1;
+            background-color: #fff;
+        }
+
+        .carousel {
+            margin-bottom: 60px;
+        }
+
+        .btn-custom-purple {
+            background-color: #6a0dad;
+            border-color: #6a0dad;
+            color: #dcdcdc;
+        }
+
+        .btn-custom-purple:hover {
+            background-color: #5a0cac;
+            border-color: #5a0cac;
+        }
+
+        .game-carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .game-carousel-container .carousel-item img {
+            max-width: 100%;
+            height: 800px; /* Increased from 400px */
+            object-fit: contain; /* Changed from cover to maintain aspect ratio */
+            display: block;
+            margin: 0 auto;
+        }
+
+        .carousel-item img {
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .carouselGame-item img {
+            max-height: 800px; /* Increased from 200px */
+            width: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            max-height: 900px;
+        }
+
+        .video-container video {
+            width: 50%;
+            height: auto;
+            border: 5px solid #6a0dad;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .carousel-container-full-width {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .composer-card-body {
+            background-color: #333;
+            color: #dcdcdc;
+            text-align: center; /* Centra el contenido */
+        }
+
+        #composer-vfx-carousel {
+            margin: 0 auto;
+        }
+
+        .carousel-wrapper {
+            display: inline-block; /* Ajusta el ancho al contenido */
+        }
+
+        #composer-vfx-carousel .carousel-item {
+            height: 600px; /* Reduced from 900px */
+            background-color: #333;
+        }
+
+        #composer-vfx-carousel .carousel-item img,
+        #composer-vfx-carousel .video-container {
+            height: 76%;
+            width: 100%;
+            object-fit: contain;
+        }
+        
+        #composer-vfx-carousel .video-container video {
+            width: 100%;
+            height: 100%;
+            max-height: 900px; /* Reduced from 800px */
+            object-fit: contain;
+        }
+        
+        #composer-vfx-carousel .carousel-item .video-container {
+            max-height: 900px; /* Reduced from 900px */
+        }
+        
+        #composer-vfx-carousel .carousel-indicators {
+            bottom: 150px; /* Adjusted from 250px to match reduced height */
+        }
+
+        #videojuegoCarrusel .carousel-indicators {
+            bottom: 80px; /* Move indicators up */
+        }
+        
+        #videojuegoCarrusel .carousel-indicators [data-bs-target] {
+            background-color: #6a0dad;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 8px; /* Increased spacing between dots */
+        }
+        
+        #videojuegoCarrusel .carousel-indicators .active {
+            opacity: 1;
+            background-color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fs-6" href="#">Adrián Carmona Córdoba | Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item fs-6"><a class="nav-link" href="#sobre-mi">Who I am?</a></li>
+                    <li class="nav-item fs-6"><a class="nav-link" href="#demos">Demos</a></li>
+                    <li class="nav-item fs-6"><a class="nav-link" href="#proyectos">Projects</a></li>
+                    <li class="nav-item fs-6"><a class="nav-link" href="#cv">My CV</a></li>
+                    <li class="nav-item fs-6"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Sobre mí -->
+    <section id="sobre-mi" class="py-5">
+        <div class="container text-center">
+            <h1 class="mb-4 fs-1">Who I am?</h1>
+            <p class="mb-5 fs-5">Hi! I'm passionate about 3D and videogame development, with experience in modeling, texturing, animation and game mechanics design. Currently, I am pursuing a higher degree in 3D Animation, games and interactive environments, where I have honed my skills in tools such as Maya, ZBrush, Unity, Nuke, Premiere, Photoshop, Illustrator and After Effects, among others.</p>
+
+            <p class="mb-5 fs-5"> My goal is to be part of creative and challenging projects that allow me to learn and grow in this industry, bringing my passion for texturing and interactive storytelling. I'm excited about working in a team and creating experiences that connect with people, in video games, animation projects, film, television... In short, everything related to audiovisual entertainment.</p>
+                
+            <p class="mb-5 fs-5"> Explore my work, and don't hesitate to get in touch if you want to collaborate or just chat about creative projects!</p>
+        
+            <!-- Carrusel de imágenes -->
+            <div id="carrusel" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carrusel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carrusel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carrusel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carrusel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/celda.jpg" class="d-block mx-auto w-50" alt="Lighting">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/ghoulgeyser.png" class="d-block mx-auto w-50" alt="Game Development">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/busto.jpg" class="d-block mx-auto w-25" alt="Modeling">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/slotverse.jpg" class="d-block mx-auto w-50" alt="Game Development">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/botella.jpg" class="d-block mx-auto w-50" alt="Shading">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Demos -->
+    <section id="demos" class="py-5">
+        <div class="container text-center">
+            <h1 class="mb-5 fs-1">Demos</h1>
+            <h1 class="mb-4 fs-4">DemoReel 2024</h1>
+            <div class="video-container">
+                <video controls class="w-100">
+                    <source src="images/DemoReel 3D  2024  Adrián Carmona Córdoba.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div><p class="mb-5 fs-5">   </p></div>
+            <h1 class="mb-4 fs-4">DemoReel 2025</h1>
+            <h class="mb-5 fs-5">coming soon...</h>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="py-5">
+        <div class="container-fluid">
+            <h2 class="text-center mb-4 fs-1">My projects</h2>
+            <div><p class="mb-3 fs-5">   </p></div>
+            <div class="row justify-content-center">
+                <!-- Generalista 3D -->
+                <div class="col-md-8 mb-4">
+                    <div class="card card-custom-width">
+                        <div class="card-header fs-4">3D Generalist</div>
+                        <div class="card-body fs-6">
+                            <p>Throughout my training, I have gained experience in the field of 3D modeling, using professional tools such as Maya, 3ds Max and ZBrush. I have learned to create detailed 3D models, both for characters and environments, mastering advanced texturing and UV mapping techniques to achieve realistic and high quality finishes.</p>
+
+                            <p>In addition, I have experience working with Nuke, where I have explored its compositing environment, integrations and workflows. I have learned how to perform complex compositing, combining 3D elements with live images to create coherent and quality visual effects. My focus in Nuke is on achieving clean and effective integrations, working with layers, effects and masks to enhance the visual narrative of each project.</p>
+                            
+                            <p>Thanks to my knowledge in these tools, I can develop complete projects, from modeling and texturing to integration and compositing, ensuring optimal quality at every stage of the creative process.</p>
+                            
+                            <a href="https://www.artstation.com/carmona17" class="btn btn-custom-purple" target="_blank">Show Artstation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desarrollador de videojuegos -->
+                <div class="col-md-8 mb-4">
+                    <div class="card card-custom-width">
+                        <div class="card-header fs-4">Videogame Developer</div>
+                        <div class="card-body fs-6">
+                            <p class="mb-3 fs-5"><strong>Denial</strong></p>
+                            <p>This is a psychological horror game in which you will immerse yourself in Joshua's most traumatic and 
+                                determining episodes of schizophrenia, which will make you discover 
+                                a little more of his disorder and accept that "it is only the first stage of grief, the DENIAL".</p>
+                            <p><strong>Duties performed:</strong> This game is the most ambitious project I have worked on so far. 
+                                With the help of Emma Fernández, Jairo Navalpotro, Pablo Torres, Natalia Penedo, Eva Valladolid, Unai Pons, 
+                                Sergio Quesada and Adrián García; we have developed this narrative and audiovisual experience through the videogame 
+                                environment. With my role as the only programmer as well as director of the videogame, I have developed my skills with
+                                the Unity graphics engine as well as my knowledge of C#, and above all team management and optimization. </p>
+                            <p><strong>Software used:</strong> Unity 3D | URP, Autodesk Maya, Adobe Phostoshop, Zbrush, Adobe Substance Painter, Adobe Audition</p>
+                            <p><strong>Preview | Available now on  <a href="https://carmonaa-al.itch.io/denial" class="btn btn-custom-purple" target="_blank">itch.io</a></strong></p>
+                            <div class="video-container">
+                                <video controls class="w-100">
+                                    <source src="images/PreviewDenial.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
+                            <p> </p>
+                            <a href="https://carmonaa-al.itch.io/denial" class="btn btn-custom-purple" target="_blank">Download Denial</a>
+                        </div>
+                        <div class="card-body fs-6">
+                            <p class="mb-3 fs-5"><strong>Ghoul Geyser</strong></p>
+                            <p>I have developed a 2D video game called <strong>Ghoul Geyser</strong>, a 2D wave-based game in which the player must face hordes of enemies that increase in difficulty with each round. The main feature of Ghoul Geyser is its focus on fast action and its constant wave dynamics, with increasing difficulty as the player progresses.</p>
+                            <p><strong>Duties performed:</strong> Videogame developed alone, where I designed the difficulty progression system, enemy programming and HUD using Unity and C#. This project allowed me to develop skills in system design and gameplay balancing.</p>
+                            <p><strong>Software used:</strong> Unity 2D, Photoshop</p>
+                            
+                            <!-- Carrusel de imágenes dentro del panel de videojuegos -->
+                            <div class="game-carousel-container">
+                                <div id="videojuegoCarrusel" class="carousel slide" data-bs-ride="false">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#videojuegoCarrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#videojuegoCarrusel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#videojuegoCarrusel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active carouselGame-item">
+                                            <img src="images/ghoul3.png" class="d-block w-80" alt="Imagen del videojuego 1">
+                                        </div>
+                                        <div class="carousel-item carouselGame-item">
+                                            <img src="images/ghoul1.png" class="d-block w-30" alt="Imagen del videojuego 2">
+                                        </div>
+                                        <div class="carousel-item carouselGame-item">
+                                            <img src="images/ghoul2.png" class="d-block w-30" alt="Imagen del videojuego 3">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#videojuegoCarrusel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#videojuegoCarrusel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p> </p>
+                            <a href="https://carmonaa-al.itch.io/ghoul-geyser" class="btn btn-custom-purple" target="_blank">Download Ghoul Geyser</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Composer section -->
+                <div class="col-md-8 mb-4">
+                    <div class="card card-custom-width">
+                        <div class="card-header fs-4">Composer | VFX Artist</div>
+                        <div class="card-body fs-">
+                            <p>I have experience in visual effects and composition using professional tools like Nuke and After Effects. My work focuses on creating seamless integrations and engaging visual effects that enhance the narrative quality of each project.</p>
+                            <p><strong>Duties performed:</strong> Development of visual effects, color correction, compositing of 3D elements with live footage, and creation of dynamic transitions.</p>
+                            <p><strong>Software used:</strong> Nuke, After Effects, Premiere Pro</p>
+                            
+                            <!-- Carrusel de imágenes dentro del panel de compositor -->
+                            <div class="carousel-container-full-width">
+                                <div id="composer-vfx-carousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#composer-vfx-carousel" data-bs-slide-to="0" class="active"></button>
+                                        <button type="button" data-bs-target="#composer-vfx-carousel" data-bs-slide-to="1"></button>
+                                        <button type="button" data-bs-target="#composer-vfx-carousel" data-bs-slide-to="2"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="video-container">
+                                                <video class= "w-900" controls>
+                                                    <source src="images/compo2.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item active">
+                                            <div class="video-container">
+                                                <video controls>
+                                                    <source src="images/compo3.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/vfx3.jpg" class="d-block w-100" alt="VFX 3">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#composer-vfx-carousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#composer-vfx-carousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="py-5">
+        <div class="container text-center fs-3">
+            <h1 class="mb-3 fs-1">My CV</h1>
+            <a href="docs/CV Adrián Carmona Córdoba_Inglés.pdf" target="_blank" download class="btn btn-custom-purple btn-lg">
+                Show my CV
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container text-center fs-3">
+            <h1 class="mb-3 fs-1">Contact</h1>
+            <a href="https://carmonaa-al.itch.io" target="_blank" download class="btn btn-custom-purple btn-lg">
+                ITCH.IO
+            </a>
+            <a href="https://www.linkedin.com/in/adrián-carmona-córdoba/" target="_blank" download class="btn btn-custom-purple btn-lg">
+                LINKEDIN
+            </a>
+            <a href="https://www.artstation.com/carmona17" target="_blank" download class="btn btn-custom-purple btn-lg">
+                ARTSTATION
+            </a>
+        </div>
+        <div><p class="mb-3 fs-5">   </p></div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p>2024 Adrián Carmona Córdoba | Portfolio</p>
+            <p>adriancarmonacordoba@gmail.com</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+                $(document).ready(function(){
+            // Inicializar los carruseles
+            $('#carrusel').carousel({
+                interval: false
+            });
+            
+            $('#videojuegoCarrusel').carousel({
+                interval: false
+            });
+
+            $('#composer-vfx-carousel').carousel({
+                interval: false,
+                interval: 3000  // 8 segundos entre slides
+            });
+            
+            // También podemos hacer la transición más lenta
+            $('.carousel').carousel({
+                transition: '3s'  // La transición durará 3 segundos
+            });
+            
+            // Event listeners para los botones de navegación
+            $('.carousel-control-prev').click(function() {
+                $(this).closest('.carousel').carousel('prev');
+            });
+            
+            $('.carousel-control-next').click(function() {
+                $(this).closest('.carousel').carousel('next');
+            });
+        });
+    </script>
+</body>
+</html>
