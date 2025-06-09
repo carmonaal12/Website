@@ -1,0 +1,194 @@
+/* Paleta de colores.
+   Se declaran como variables dentro de esta sección (:root)
+   precedidas por dos guiones. Para llamarlas se usa
+   var(--nombrevariable). */
+
+:root {
+    --col1b: #1F020E;
+    --col2b: #471025;
+    --col3b: #6E1F3D;
+    --col4b: #962D54;
+    --test: #FF00FF;
+}
+
+/* Contenedor global (la posición relativa es necesaria para los botones) */
+
+.container {
+    box-sizing: border-box;
+    position: relative;
+    /* overflow: hidden; */
+    border-radius: 15px;
+    max-width: 800px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Imágenes */
+
+img.slideshow {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+video.slideshow {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+/* Contenedor de imágenes. Oculta imágenes por defecto.
+   Las imágenes se muestran recortadas a 16:9
+   9/16 = 0.5625 = 56.25% (alto) de 100% (ancho) */
+
+.mySlides {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: none;
+    border: 5px solid #6a0dad;
+    border-radius: 10px;
+    background: #1F020E; /* Fondo oscuro para el marco */
+    position: relative;
+}
+
+/* Cambiar el cursor cuando se pase por encima de las miniaturas
+   pasa de flechita a dedo apuntando (icono para los clicables) */
+
+.cursor {
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Botones para avanzar/retroceder imagen */
+
+.prev,
+.next {
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: clamp(0.2em, 1vw, 0.5em) clamp(0.3em, 2vw, 0.8em);
+    margin-top: -30px;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    border-radius: 3px;
+    user-select: none;
+    -webkit-user-select: none;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0,0,0,0.3);
+}
+
+.prev{
+    margin-left: -80px;
+    left: 10px;
+}
+
+/* Posicionar el botón de siguiente imagen a la derecha */
+
+.next {
+    right: 0px;
+    margin-right: -70px;
+    /* border-radius: 3px 0 0 3px; */
+}
+
+/* Fondo oscuro semitransparente en flechas */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(150, 150, 150, 0.4);
+}
+
+/* Contenedor para pie de foto */
+/* 
+.caption-container {
+    box-sizing: border-box;
+    text-align: center;
+    background-color: var(--col2b);
+    padding: 2px 16px;
+    color: white;
+} */
+
+.row {
+    margin-top: 20px;;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Si necesitas que las columnas no se rompan en varias líneas, añade: */
+    /* flex-wrap: nowrap; */
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+/* Seis columnas de un lado a otro */
+
+.column {
+    box-sizing: border-box;
+    /* float: left; */ /* Elimina el float */
+    width: 20%;
+}
+
+.column img {
+    object-fit: cover;
+
+}
+
+/* Contenedor para las miniaturas. Incluye efecto de transparencia.
+   Aún no he conseguido que las miniaturas también
+   tengan una relación de aspecto fija de 16:9 */
+
+.demo {
+    height: 70px;
+    box-sizing: border-box;
+    opacity: 0.4;
+
+    border: 5px solid #6a0dad;
+    border-radius: 10px;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+/* Cambiar el tamaño de la galería y miniaturas cuando se ve en móvil */
+/* Esto último alivia más o menos el problema de los 16:9 */
+.nav-splitter{
+    display: none;
+}
+
+@media only screen and (max-width: 859px) {
+    
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .demo {
+        height: 55px;
+    }
+
+    .prev, .next
+    {
+        display: none;
+    }
+
+    .nav-splitter{
+    display: inline-block;
+    }
+}

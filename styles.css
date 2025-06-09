@@ -1,0 +1,213 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar,
+footer {
+    background-color: #6a0dad;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link,
+footer {
+    color: #dcdcdc;
+}
+
+.card-header {
+    background-color: #6a0dad;
+    color: #dcdcdc;
+}
+
+.card-body {
+    background-color: #333;
+    color: #dcdcdc;
+}
+
+.card-custom-width {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(106, 13, 173, 0.7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.carousel-indicators {
+    bottom: -20px;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #6a0dad;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #fff;
+}
+
+.carousel {
+    /* margin-bottom: 60px; */
+}
+
+.btn-custom-purple {
+    background-color: #6a0dad;
+    border-color: #6a0dad;
+    color: #dcdcdc;
+}
+
+.btn-custom-purple:hover {
+    background-color: #5a0cac;
+    border-color: #5a0cac;
+}
+
+.game-carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-carousel-container .carousel-item img {
+    max-width: 100%;
+    height: 800px; /* Increased from 400px */
+    object-fit: contain; /* Changed from cover to maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-item img {
+    /* max-height: 400px; */
+    object-fit: cover;
+}
+
+.carouselGame-item img {
+    max-height: 800px; /* Increased from 200px */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.video-container {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    max-height: 900px;
+}
+
+.video-container video {
+    width: 50%;
+    height: auto;
+    border: 5px solid #6a0dad;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.carousel-container-full-width {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.composer-card-body {
+    background-color: #333;
+    color: #dcdcdc;
+    text-align: center; /* Centra el contenido */
+}
+
+#composer-vfx-carousel {
+    margin: 0 auto;
+}
+
+.carousel-wrapper {
+    display: inline-block; /* Ajusta el ancho al contenido */
+}
+
+#composer-vfx-carousel .carousel-item {
+    height: 600px; /* Reduced from 900px */
+    background-color: #333;
+}
+
+#composer-vfx-carousel .carousel-item img,
+#composer-vfx-carousel .video-container {
+    height: 76%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#composer-vfx-carousel .video-container video {
+    width: 100%;
+    height: 100%;
+    max-height: 900px; /* Reduced from 800px */
+    object-fit: contain;
+}
+
+#composer-vfx-carousel .carousel-item .video-container {
+    max-height: 900px; /* Reduced from 900px */
+}
+
+#composer-vfx-carousel .carousel-indicators {
+    bottom: 150px; /* Adjusted from 250px to match reduced height */
+}
+
+#videojuegoCarrusel .carousel-indicators {
+    bottom: 80px; /* Move indicators up */
+}
+
+#videojuegoCarrusel .carousel-indicators [data-bs-target] {
+    background-color: #6a0dad;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px; /* Increased spacing between dots */
+}
+
+#videojuegoCarrusel .carousel-indicators .active {
+    opacity: 1;
+    background-color: #fff;
+}
+
+/* Reduce spacing between sections CV and Contact */
+#cv {
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+#contact {
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+}
+
+/* Reduce spacing after VFX section */
+#proyectos {
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+/* Optionally, reduce default section spacing if needed */
+section.py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
